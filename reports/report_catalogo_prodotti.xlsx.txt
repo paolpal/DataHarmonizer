@@ -1,0 +1,14 @@
+Report dal file Excel: report_catalogo_prodotti.xlsx.txt
+Numero totale di righe: 406
+Numero totale di colonne: 4
+Elenco delle colonne:
+- product
+- color
+- size
+- material
+
+Celle vuote per colonna:
+product    25
+color      59
+size       51
+material   3

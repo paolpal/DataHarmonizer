@@ -1,0 +1,34 @@
+Report dal file Excel: report_dati di produzione.xlsx.txt
+Numero totale di righe: 700
+Numero totale di colonne: 14
+Elenco delle colonne:
+- received_date
+- start_date
+- completion_date
+- shipment_data_required
+- on_time
+- customer
+- press
+- quantity
+- color
+- size
+- setup_time
+- production_time
+- mazzi
+- material
+
+Celle vuote per colonna:
+received_date 0
+start_date 0
+completion_date 0
+shipment_data_required 0
+on_time    0
+customer   0
+press      0
+quantity   0
+color      0
+size       0
+setup_time 0
+production_time 0
+mazzi      0
+material   0

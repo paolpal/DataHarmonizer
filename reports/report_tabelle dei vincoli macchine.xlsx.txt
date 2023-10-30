@@ -1,0 +1,16 @@
+Report dal file Excel: report_tabelle dei vincoli macchine.xlsx.txt
+Numero totale di righe: 5
+Numero totale di colonne: 5
+Elenco delle colonne:
+- WorkStation
+- Material
+- Dimension min
+- Dimension max
+- Department
+
+Celle vuote per colonna:
+WorkStation 0
+Material   0
+Dimension min 0
+Dimension max 0
+Department 0

@@ -1,0 +1,22 @@
+Report dal file Excel: report_ordini ricevuti da gestionale.xlsx.txt
+Numero totale di righe: 700
+Numero totale di colonne: 8
+Elenco delle colonne:
+- received_date
+- shipment_date_required
+- product
+- material
+- customer
+- color
+- size
+- quantity
+
+Celle vuote per colonna:
+received_date 0
+shipment_date_required 0
+product    0
+material   0
+customer   0
+color      0
+size       0
+quantity   0
