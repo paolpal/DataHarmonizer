@@ -7,13 +7,13 @@ def write_excel_file(output_filename, dataframes):
     :param output_filename: Il nome del file Excel di output.
     :param dataframes: Un dizionario con i DataFrame pandas riorganizzati.
     """
-    writer = pd.ExcelWriter(output_filename, engine='openpyxl')
+    #writer = pd.ExcelWriter(output_filename, engine='openpyxl')
 
     # Scrivi ogni DataFrame in una scheda separata del file Excel
     for filename, df in dataframes.items():
-        df.to_excel(writer, sheet_name=filename, index=False)
+        df.to_excel(output_filename, index=False)
 
-    writer.save()
+    #writer.save()
 
 if __name__ == "__main__":
     # Esempio di utilizzo del modulo

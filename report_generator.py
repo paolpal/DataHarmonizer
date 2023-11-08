@@ -28,7 +28,7 @@ def generate_text_report(dataframe, report_folder, filename):
         # Sezione 3: Dati Mancanti
         file.write("\nSezione 3: Dati Mancanti\n")
         missing_data = dataframe.isnull().sum()
-        for column, count in missing_data.iteritems():
+        for column, count in missing_data.items():
             if count > 0:
                 file.write(f"Colonna con dati mancanti: {column}\n")
                 file.write(f"Numero di dati mancanti: {count}\n")
