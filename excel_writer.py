@@ -10,7 +10,7 @@ def write_excel_file(output_filename, dataframes):
     #writer = pd.ExcelWriter(output_filename, engine='openpyxl')
 
     # Scrivi ogni DataFrame in una scheda separata del file Excel
-    for filename, df in dataframes.items():
+    for _, df in dataframes.items():
         df.to_excel(output_filename, index=False)
 
     #writer.save()

@@ -1,27 +1,34 @@
 import pandas as pd
 
-def analyze_data(dataframe):
-    """
-    Analizza i dati in un DataFrame pandas e restituisce informazioni rilevanti.
+def calculate_similarity(column_df1, column_df2):
+    length_unique_df1 = len(set(column_df1))
+    length_unique_df2 = len(set(column_df2))
 
-    :param dataframe: Il DataFrame pandas contenente i dati da analizzare.
-    :return: Un dizionario con le informazioni raccolte.
-    """
-    data_info = {}
+    length_overlap = len(set(column_df1) & set(column_df2))
 
-    # Esempio: Calcola il numero totale di righe
-    data_info["Numero totale di righe"] = len(dataframe)
+    overlap_percentage = (length_overlap / min(length_unique_df1, length_unique_df2))
 
-    # Esempio: Elenca i nomi delle colonne
-    data_info["Nomi delle colonne"] = dataframe.columns.tolist()
+    return overlap_percentage
 
-    # Puoi aggiungere altre analisi specifiche ai tuoi dati
+def similarity(df1, df2):
+    similarity_results = pd.DataFrame(columns=['Colonna1', 'Colonna2', 'Similarita'])
 
-    return data_info
+    for col1 in df1.columns:
+        for col2 in df2.columns:
+            similarity = calculate_similarity(df1[col1], df2[col2])
+            new_row = {'Colonna1': [col1], 'Colonna2': [col2], 'Similarita': [similarity]}
+            new_row = pd.DataFrame(new_row)
+            similarity_results = pd.concat([similarity_results, new_row], ignore_index=True)
 
-if __name__ == "__main__":
-    # Esempio di utilizzo del modulo
-    excel_file_path = "esempio.xlsx"  # Specifica il percorso del file Excel da analizzare
-    data = pd.read_excel(excel_file_path)  # Leggi il file Excel
-    analysis_result = analyze_data(data)  # Esegui l'analisi
-    # Puoi ora lavorare con le informazioni raccolte
+    groupped = similarity_results.groupby('Colonna1')
+    idx =  groupped['Similarita'].idxmax()
+    max_scores = similarity_results.loc[idx]
+
+    max_scores = max_scores[max_scores['Similarita']>0.8]
+    max_scores = max_scores[['Colonna1', 'Colonna2']]
+    max_scores = max_scores.to_dict()
+    max_scores = {key: list(value.values()) for key, value in max_scores.items()}
+
+    return max_scores
+
+
