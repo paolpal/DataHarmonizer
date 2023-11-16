@@ -1,0 +1,9 @@
+	Colonna	Numero di celle	% Valori mancanti	% Valori univoci
+0	received_date	700	0.0	34.0
+1	shipment_date_required	700	0.0	41.42857142857143
+2	product	700	0.0	17.142857142857142
+3	material	700	0.0	0.8571428571428572
+4	customer	700	0.0	1.4285714285714286
+5	color	700	0.0	0.7142857142857143
+6	size	700	0.0	0.7142857142857143
+7	quantity	700	0.0	17.142857142857142

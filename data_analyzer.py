@@ -25,7 +25,7 @@ def similarity(df1, df2):
     max_scores = similarity_results.loc[idx]
 
     max_scores = max_scores[max_scores['Similarita']>0.8]
-    max_scores = max_scores[['Colonna1', 'Colonna2']]
+    #max_scores = max_scores[['Colonna1', 'Colonna2']]
     max_scores = max_scores.to_dict()
     max_scores = {key: list(value.values()) for key, value in max_scores.items()}
 

@@ -28,7 +28,8 @@ def tabular_report(df):
     righe = []
     
     for colonna in df.columns:
-        numero_di_celle = len(df[colonna])
+        #numero_di_celle = len(df[colonna])
+        numero_di_celle = (df[colonna].count())
         percentuale_valori_mancanti = df[colonna].isnull().mean() * 100
         percentuale_valori_univoci = df[colonna].nunique() / numero_di_celle * 100
         
